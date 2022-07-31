@@ -10,8 +10,3 @@ const changeTheNumber =(state = initialState, action ) => {
 
 export default changeTheNumber;
 
-/**
- * 
- *  case  "INCREMENT" : return state + 1;
-        case  "DECREMENT" : return state -= 1;
- */

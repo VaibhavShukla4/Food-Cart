@@ -21,7 +21,3 @@ function App() {
 }
 
 export default App;
-{/* <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/' element={<Menu/> }/>
-      </Routes> */}

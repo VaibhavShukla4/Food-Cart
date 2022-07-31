@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigat = useNavigate();
+  const navigate = useNavigate();
   const [showsignin, setshowsignin] = useState(false);
   const [message, setmessage] = useState("");
   const Toggle = () => {
@@ -33,7 +33,7 @@ const Login = () => {
     if (mail && password) {
       if (email === mail && password === password1) {
         setmessage("Login successfully");
-        navigat("/menu");
+        navigate("/menu");
       } else {
         setmessage("Please fill correct credential");
       }

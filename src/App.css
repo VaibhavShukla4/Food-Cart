@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+.text-light{
+  margin-left: 58rem;
+}
+.card_{
+  margin-top: 8rem;
+}
+.login{
+  margin-top: 1rem;
+  text-decoration: none;
+}
+.checkout{
+  margin-top: 40%;
+}
+.home{
+  margin-top: 20%;
+}

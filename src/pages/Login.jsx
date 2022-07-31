@@ -4,12 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [showsignin, setshowsignin] = useState(false);
   const [message, setmessage] = useState("");
   const Toggle = () => {
     setshowsignin(!showsignin);
   };
+  const navigate = useNavigate();
   const signupFn = () => {
     const fstname = document.getElementById("fstname").value;
     const lstname = document.getElementById("lstname").value;
@@ -21,7 +21,9 @@ const Login = () => {
       localStorage.setItem("lstname", lstname);
       localStorage.setItem("email", email);
       localStorage.setItem("password", password);
+
     }
+    
     setmessage("User Signed Up Successfully...");
   };
   const loginFn = () => {

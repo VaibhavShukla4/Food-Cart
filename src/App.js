@@ -13,12 +13,12 @@ function App() {
   return (
     <div className="App vh-100">
       <Routes>
-       <Route path='/unauthorized' element={<Unauthorized/>}/>
-        <Route path='/' element={<Home/>}/>
-       <Route path='/login' element={<Login/>}/>
-        <Route path='/menu' element={<Menu/> }/>
-       <Route path='/checkout' element={<Checkout/>}/>
-      <Route path='/*' element={<NotFound/> }/>
+       <Route exact path='/unauthorized' element={<Unauthorized/>}/>
+        <Route exact path='/' element={<Home/>}/>
+       <Route exact path='/login' element={<Login/>}/>
+        <Route exact path='/menu' element={<Menu/> }/>
+       <Route exact path='/checkout' element={<Checkout/>}/>
+      <Route exact path='/*' element={<NotFound/> }/>
       </Routes> 
     </div>
   ); 

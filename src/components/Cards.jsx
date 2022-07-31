@@ -21,13 +21,13 @@ const myState =useSelector((state) => state.changeTheNumber);
               key={index}
             >
               <div
-                className="card my-3 "
+                className="card my-2 "
                 style={{ width: "18rem", height: "25rem" }}
               >
                 <img
                   src={item.imgdata}
                   className="card-img-top"
-                  style={{ width: "18rem", height: "13rem" }}
+                  style={{ width: "285px", height: "13rem" }}
                   alt={`slide ${index + 1}`}
                 />
                 <div className="card-body">

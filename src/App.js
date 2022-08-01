@@ -2,23 +2,28 @@
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Checkout from './pages/Checkout';
-import Home from './pages/Home';
-import Menu from './pages/Menu';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
-import Unauthorized from './pages/Unauthorized';
+import Checkout from './components/Checkout';
+import Home from './components/Home';
+import Menu from './components/Menu';
+import Login from './components/Login';
+// import Details from './pages/Details';
+import AddToCart from './components/AddToCard';
+import Cards from './components/Cards';
+// import Cards from './components/Cards';
+
+
 
 function App() {
   return (
     <div className="App vh-100">
       <Routes>
-       <Route exact path='/unauthorized' element={<Unauthorized/>}/>
-        <Route exact path='/' element={<Home/>}/>
-       <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/menu' element={<Menu/> }/>
-       <Route exact path='/checkout' element={<Checkout/>}/>
-      <Route exact path='/*' element={<NotFound/> }/>
+       
+       <Route exact path='/' element={<Login/>}/>
+        <Route exact path='/home' element={<Home/>}/>
+        <Route exact path='/Cards' element={<Cards/> }/>
+        <Route exact path='/AddToCart' element={<AddToCart/> }/>
+       <Route exact path='/AddToCart/Checkout' element={<Checkout/>}/>
+      
       </Routes> 
     </div>
   ); 

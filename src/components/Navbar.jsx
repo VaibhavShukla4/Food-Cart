@@ -4,18 +4,24 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
+//   const [open, setOpen] = useState(false)
   
-  // const dispatch = useDispatch();
+//   const handleOpen=()=>{
+//     set
+//   }
+  
   return (
     <nav
-      className="d-flex fixed-top  navbar navbar-expand-lg"
+      className="d-flex col-md-12 col-sm-12 fixed-top  navbar navbar-expand-lg"
       style={{ background: "#303F9F", height: "" }}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/menu">
-          <h4 className="text-light mx-5 ">🍴Food's Restaurent</h4>
+        <Link className="navbar-brand" to="/Cards">
+          <h4 className="text-light mx-5 "> <svg xmlns="http://www.w3.org/2000/svg" className="Food" width="24" height="24" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg> Food's Restaurent</h4>
         </Link>
-        
+        {/* <button className="navbar-toggler" onClick={handleOpen} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button> */}
           
         <div
           className="collapse navbar-collapse float-right"
@@ -24,8 +30,8 @@ const Navbar = () => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item float-right">
-              <Link className="nav-link" to="/checkout">
-
+              <Link className="nav-link" to="/AddToCart">
+                   
                 <h5 className="text-light" >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +46,7 @@ const Navbar = () => {
                 </h5>
               </Link>
             </li>
-            <li><Link to="/login"><h4 className="login text-light mx-5" style={{cursor:"pointer"}}>Login</h4></Link></li>
+            
           </ul>
         </div>
       </div>

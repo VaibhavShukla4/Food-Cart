@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
 
 
 
@@ -11,10 +11,10 @@ const Checkout = () => {
     <div className='container '>
   
   <div className='d-flex justify-content-center align-items-center'>
-         <card className="card" style={{width:"70rem", height:"8rem"}} >
+         <div className="card" style={{width:"70rem", height:"8rem"}} >
           <h3>Checkout</h3>
           <h5>Thank you for your order .</h5>
-         </card>
+         </div>
   </div>
     </div>
     </div>

@@ -1,55 +1,51 @@
 import React,{useState} from "react";
 import CardData from './CardData';
-import { useSelector, useDispatch } from "react-redux";
-import {incNumber,decNumber} from '../redux/action/action'
+import {useDispatch } from "react-redux";
+import {Add} from '../redux/actions/action'
+import Navbar from "./Navbar";
 const Cards = () => {
-  const [data] = useState(CardData);
+  const [data, setData] = useState(CardData);
 
-const myState =useSelector((state) => state.changeTheNumber);
- const dispatch = useDispatch();
-  
-  
-  return (
+  const dispatch = useDispatch();
+  const send = (e) => {
+    console.log("first")
+    dispatch(Add(e));
     
-      <div className="card_ mx-5 " >
-      
+  };
+
+  return ( 
+    <>
+    <Navbar/>
+      <div className="card_ mx-5 " >     
         <div className="row ">
         {data.map((item,index) =>{
           return (
             <div
-              className="col-md-4 d-flex justify-content-center flex-wrap align-items-center"
+              className=" col-md-4 d-flex justify-content-center flex-wrap align-items-center"
               key={index}
             >
               <div
                 className="card my-2 "
-                style={{ width: "18rem", height: "25rem" }}
+                style={{ width: "22rem", height: "25rem" }}
               >
                 <img
-                  src={item.imgdata}
+                  src={item.image}
                   className="card-img-top"
-                  style={{ width: "285px", height: "13rem" }}
-                  alt={`slide ${index + 1}`}
+                  style={{ width: "349px", height: "13rem" }}
+                  alt=""
                 />
                 <div className="card-body">
                   <h5 className="card-title">
-                    <strong></strong>
-                    {item.rname}
+                   {item.name}                   
                   </h5>
-
                   <h6 className="card-title">
                     <strong>Price ₹: </strong>
                     {item.price}
                   </h6>
-                  <div >
-                    <h6 className="card-title">
-                      <strong>Total :</strong>
-                      { myState}
-                    </h6>
-                    <h6 className="card-title">Cost (INR) ₹:{item.price * myState} </h6>
-                    <p className="card-text"></p>
+                  <div >                  
                     <button
                       className="btn btn-primary mx-1"
-                      onClick={() => dispatch(incNumber(item.qnty))}
+                      onClick={() => send(item)}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +63,7 @@ const myState =useSelector((state) => state.changeTheNumber);
                     </button>
                     <button
                       className="btn btn-danger"
-                      onClick={() => dispatch(decNumber(item.qnty))}
+                      disabled={true}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +89,7 @@ const myState =useSelector((state) => state.changeTheNumber);
           <br/>
           <br/>
       </div>
-    
+    </>
   );
       };
 

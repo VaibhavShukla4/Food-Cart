@@ -35,7 +35,7 @@ const Login = () => {
     if (mail && password) {
       if (email === mail && password === password1) {
         setmessage("Login successfully");
-        navigate("/menu");
+        navigate("/home");
       } else {
         setmessage("Please fill correct credential");
       }

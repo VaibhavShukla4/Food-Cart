@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
 import { useNavigate } from 'react-router-dom';
 const Home = () => {
 
 
   const navigate=useNavigate()
   const handleMenu=()=>{
-    navigate('/menu')
+    navigate('/Cards')
   }
   return (
     <div>       

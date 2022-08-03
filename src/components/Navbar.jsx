@@ -30,7 +30,7 @@ const Navbar = () => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item float-right">
-              <Link className="nav-link" to="/AddToCart">
+              <Link className="nav-link" to="`/AddToCart/${id}`">
                    
                 <h5 className="text-light" >
                   <svg

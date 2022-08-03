@@ -1,21 +1,23 @@
-//add items into cart
-export const Add =(item) =>{
-    return{
-        type:"AddToCart",
-        payload : item
-    }
-}
-export const Delete =(id) =>{
-    return{
-        type:"RemoveFromCart",
-        payload : id
+export const ADD = (item) => {
+    return {
+        type: "ADD_CART",
+        payload: item
     }
 }
 
-//decrease the quantity by 1. 
-export const DeleteQnty =(item) =>{
-    return{
-        type:"RemoveSingleQuantity",
-        payload : item
+// remove iteams
+export const DLT = (id) => {
+    return {
+        type: "RMV_CART",
+        payload: id
+    }
+}
+
+// remove individual iteam
+
+export const REMOVE = (iteam) => {
+    return {
+        type: "RMV_ONE",
+        payload: iteam
     }
 }

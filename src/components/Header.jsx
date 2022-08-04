@@ -72,7 +72,7 @@ const Header = () => {
             Food's Restaurent
           </h4>
         </NavLink>
-
+          
         <Badge
           badgeContent={getdata.length}
           color="primary"
@@ -199,6 +199,7 @@ const Header = () => {
           </Menu>
         
       </Container>
+            <h4 className="fstname" style={{color:"white",marginRight:"5rem" }}>Hi {localStorage.getItem("fstname")}</h4>
     </Navbar>
   );
 };

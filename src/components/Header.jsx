@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Badge from "@mui/material/Badge";
-import Nav from "react-bootstrap/Nav";
+// import Nav from "react-bootstrap/Nav";
 import Menu from "@mui/material/Menu";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -118,12 +118,14 @@ const Header = () => {
                             >
                               <img
                                 src={item.image}
-                                style={{ width: "10rem", height: "10rem" }}
+                                style={{ width: "10rem", height: "10rem",backgroundColor:"#303F9F"  }}
                                 alt=""
+                                className="card"
                               />
                             </NavLink>
                           </td>
-                          <td>
+                          <td className="mt-3">
+                          <br />
                             <span>{item.name}</span>
                             <br />
                             <br />
@@ -132,7 +134,7 @@ const Header = () => {
                             <br />
                             <span>Quantity : {item.qnty}</span>
                             <br />
-                            <br />
+                            
                             <span
                               style={{
                                 color: "red",
@@ -144,8 +146,8 @@ const Header = () => {
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 values="close"
-                                width="16"
-                                height="16"
+                                width="23"
+                                height="23"
                                 fill="currentColor"
                                 className="bi bi-trash"
                                 viewBox="0 0 16 16"
@@ -164,7 +166,8 @@ const Header = () => {
                             style={{
                               color: "red",
                               fontSize: 20,
-                              cursor: "pointer",
+                              cursor: "pointer"
+                              
                             }}
                             onClick={() => dlt(item.id)}
                           >
@@ -183,7 +186,7 @@ const Header = () => {
                 className="card_details d-flex justify-content-center align-items-center"
                 style={{ width: "24rem", padding: 10, position: "relative" }}
               >
-                <p style={{ fontSize: 22 }}>Your carts is empty</p>
+                <p style={{ fontSize: 22 ,color:"#303F9F" }}>Your Carts is Empty Right Now</p>
                 <img
                   src={empty}
                   alt=""

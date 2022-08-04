@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { DLT, ADD, REMOVE } from "../redux/actions/action";
 import Header from "./Header";
 import Button from "react-bootstrap/Button";
+import { padding, width } from "@mui/system";
 
 const CardsDetails = () => {
   const [data, setData] = useState([]);
@@ -56,121 +57,94 @@ const CardsDetails = () => {
 
   return (
     <div className="container vh-100">
-      <Header/>
-      <div className="container mt-5" >
-        <section className="container  mt-5">
-          <div className="iteamsdetails  d-flex justify-content-center align-items-center mt-5">
+      <Header />
+      <div className="container mt-5">
+        <section className="  mt-5">
+          <div className="row iteamsdetails  d-flex justify-content-center align-items-center mt-5">
             {data.map((item, index) => {
               return (
-                <div key={index} className=" mx-2 mt-5 d-flex justify-content-center align-items-center">
-                  <div className="items_img mt-5 col-sm-6" >
-                    <img src={item.image} alt="" className="col-sm-2" />
-                  </div>
-
+                <div
+                  key={index}
+                  className="col mx-2 mt-5 d-flex justify-content-center align-items-center"
+                >
                   <div className="details col-sm-6 mt-5  mx-5">
-                    <Table className="col-sm-6 mt-5">
-                      <tr>
-                        <td>
-                          <span>{item.name}</span>
-                          <br/>
-                          <br/>
+                    <Table className="container col-sm-6  mt-4" >
+                      <div className="items_img  col-sm-6" >
+                        <img src={item.image} alt="" className="col-sm-2" />
+                      </div>
+                      <tr className="row">
+                        <td className="col" >
+                          <strong style={{color:"#303F9F"}}>{item.name}</strong>
+                          <br />
+                          <br />
+                          <strong style={{color:"#303F9F"}}>Price</strong> : ₹{item.price}
+                          <br />
                           <span>
                             {" "}
-                            <strong>Price</strong> : ₹{item.price}
+                            <strong style={{color:"#303F9F"}}>Total</strong> : {item.qnty}
                           </span>
-                          <br/>
-                          <br/>
+                          <br />
                           <span>
                             {" "}
-                            <strong>Total</strong> : {item.qnty}
+                            <strong style={{color:"#303F9F"}}>Cost</strong> :₹ {item.price * item.qnty}
                           </span>
-                          <br/>
-                          <br/>
-                          <span>
-                            {" "}
-                            <strong>Cost</strong> :₹ {item.price * item.qnty}
-                          </span>
-                          <br/>
-                          <br/>
-                          <div
-                            className="col-sm-6 mt-5 d-flex justify-content-between align-items-center"
+                          <br />
+                          <tr
+                            className="d-flex justify-content-center align-items-center"
                             style={{
-                              width: 100,
                               cursor: "pointer",
-                              background: "#303F9F",
+                              background: "",
                               color: "#white",
                             }}
                           >
-                            <span
-                              style={{ fontSize: 30 ,color:"red"}}
+                            <Button
+                              style={{
+                                fontSize: 30,
+                                color: "white",
+                                paddingLeft: "1rem",
+                                paddingRight: "1rem",
+                              }}
                               onClick={
                                 item.qnty === 0
                                   ? () => dlt(item.id)
                                   : () => remove(item)
                               }
                             >
-                             <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="45"
-                        height="45"
-                        fill="currentColor"
-                        className="col-sm-6 bi bi-dash-lg "
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"
-                        />
-                      </svg>
-                            </span>
-                            <span style={{ fontSize: 22, color:"white"}}>{item.qnty}</span>
-                            <span
-                              style={{ fontSize: 24 ,color:"red"}}
+                              -
+                            </Button>
+                            <strong
+                              style={{
+                                fontSize: 20,
+                                color: "black",
+                                paddingLeft: "10%",
+                                paddingRight: "10%",
+                              }}
+                            >
+                              {item.qnty}
+                            </strong>
+                            <Button
+                              style={{
+                                fontSize: 30,
+                                color: "white",
+                              }}
                               onClick={() => send(item)}
                             >
-                              <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="45"
-                        height="45"
-                        fill="currentColor"
-                        className="col-sm-6 bi bi-plus-lg"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                        />
-                      </svg>
-                            </span>
-                          </div>
+                              +
+                            </Button> 
+                          </tr>
                         </td>
                         <td>
-                          <Button
-                            onClick={HandleOrder}
-                            className="col-sm-8 d-flex btn btn-primary mx-5 bg-primary"
-                          >
-                            Payment Now
-                          </Button>
-                          <svg
-                            onClick={() => dlt(item.id)}
-                            style={{
-                              color: "red",
-                              fontSize: 20,
-                              cursor: "pointer",
-                            }}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-trash"
-                            viewBox="0 0 16 16"
-                          >
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                            <path
-                              fillRule="evenodd"
-                              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
-                            />
-                          </svg>
+                        <Button
+                          onClick={HandleOrder}
+                          className="col-sm-12 mt-1 d-flex justify-content-center align-items-center   bg-primary"
+                          style={{
+                            fontSize: 19,
+                            width: "9rem",
+                            marginLeft: "6rem",
+                          }}
+                        >
+                          Payment Now
+                        </Button>
                         </td>
                       </tr>
                     </Table>

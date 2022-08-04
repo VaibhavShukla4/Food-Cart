@@ -62,3 +62,21 @@
 .butt{
   margin-top: 18%;
 }
+.card_:hover{
+  background-color: rgb(212, 233, 237);
+  opacity: 0.9;
+  
+}
+.card:hover{
+  /* background-color: rgb(168, 230, 241); */
+  opacity: 0.9;
+  
+}
+.details{
+  width: 144rem;
+  margin-top: 6rem;
+}
+/* .ckeck{
+  /* margin-top: 7rem; 
+
+} */

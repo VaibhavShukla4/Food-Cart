@@ -1,26 +1,29 @@
 import React from "react";
 import Header from "./Header";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import Table from "react-bootstrap/Table";
-
+// import Thank from '../assets/Thank.gif'
+import thank_ from '../assets/thank_.gif'
 const Checkout = () => {
   return (
-    <div>
-      <Header />
+    <div className="container">
+      <Header  />
       <div >
-        <div className="details mx-5 " style={{ width:"90%",marginTop:"20%"}}>
-          <Table>
+        <div className="details__ d-flex justify-content-center align-items-center mx-5 mt-5">
+          <Table className="ckeck ">
           <thead>
-          <h2>Checkout</h2>
+          {/* <h2>Thank you for your order </h2> */}
           </thead>
             <tbody>
               <tr>
-                <td>
-                  
-                  <h5>Thank you for your order .</h5>
-                </td>
+                <img src={thank_} alt=""
+                    style={{height:"42rem",backgroundColor:"#303F9F"}}
+                />
               </tr>
             </tbody>
+            <tfoot>
+
+            </tfoot>
           </Table>
       </div>
         </div>

@@ -74,19 +74,19 @@ const CardsDetails = () => {
                       </div>
                       <tr className="row">
                         <td className="col" >
-                          <strong style={{color:"#303F9F"}}>{item.name}</strong>
+                          <strong style={{color:"#3f51b5"}}>{item.name}</strong>
                           <br />
                           <br />
-                          <strong style={{color:"#303F9F"}}>Price</strong> : ₹{item.price}
+                          <strong style={{color:"#3f51b5"}}>Price</strong> : ₹{item.price}
                           <br />
                           <span>
                             {" "}
-                            <strong style={{color:"#303F9F"}}>Total</strong> : {item.qnty}
+                            <strong style={{color:"#3f51b5"}}>Total</strong> : {item.qnty}
                           </span>
                           <br />
                           <span>
                             {" "}
-                            <strong style={{color:"#303F9F"}}>Cost</strong> :₹ {item.price * item.qnty}
+                            <strong style={{color:"#3f51b5"}}>Cost</strong> :₹ {item.price * item.qnty}
                           </span>
                           <br />
                           <tr
@@ -103,6 +103,7 @@ const CardsDetails = () => {
                                 color: "white",
                                 paddingLeft: "1rem",
                                 paddingRight: "1rem",
+                                backgroundColor:"#3f51b5"
                               }}
                               onClick={
                                 item.qnty === 0
@@ -126,6 +127,7 @@ const CardsDetails = () => {
                               style={{
                                 fontSize: 30,
                                 color: "white",
+                                backgroundColor:"#3f51b5"
                               }}
                               onClick={() => send(item)}
                             >
@@ -136,11 +138,12 @@ const CardsDetails = () => {
                         <td>
                         <Button
                           onClick={HandleOrder}
-                          className="col-sm-12 mt-1 d-flex justify-content-center align-items-center   bg-primary"
+                          className="col-sm-12 mt-1 d-flex justify-content-center align-items-center  "
                           style={{
                             fontSize: 19,
                             width: "9rem",
                             marginLeft: "6rem",
+                            backgroundColor:"#3f51b5"
                           }}
                         >
                           Payment Now

@@ -54,7 +54,7 @@ const Header = () => {
   return (
     <Navbar
       className="d-flex col-md-12 col-sm-12 fixed-top  navbar navbar-expand-lg"
-      style={{ background: "#303F9F", height: "12%" }}
+      style={{ background: "#3f51b5", height: "12%" }}
     >
       <Container>
         <NavLink className="navbar-brand" to="/Cards">
@@ -118,7 +118,7 @@ const Header = () => {
                             >
                               <img
                                 src={item.image}
-                                style={{ width: "10rem", height: "10rem",backgroundColor:"#303F9F"  }}
+                                style={{ width: "10rem", height: "10rem",backgroundColor:"#3f51b5"  }}
                                 alt=""
                                 className="card"
                               />
@@ -187,126 +187,25 @@ const Header = () => {
                 style={{ width: "24rem", padding: 10, position: "relative" }}
               >
                 <p style={{ fontSize: 22 ,color:"#303F9F" }}>Your Carts is Empty Right Now</p>
-                <img
+                {/* <img
                   src={empty}
                   alt=""
                   className="emptycart_img"
                   style={{ width: "60%", height: "60%", padding: 10 }}
-                />
+                /> */}
                 
               </div>
             )}
           </Menu>
         
       </Container>
-            <h4 className="fstname" style={{color:"white",marginRight:"5rem" }}>Hi {localStorage.getItem("fstname")}</h4>
+            <h4 className="fstname" style={{color:"white",marginRight:"5rem" }}>
+            {/* Hi {localStorage.getItem("fstname")} */}
+            </h4>
     </Navbar>
   );
 };
 
 export default Header;
 
-/***
- * showModal &&
- * onClose={() => setShowModal(false)}
- * 
- * 
- * <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-          {getdata.length ? (
-            <div
-              className="card_details"
-              style={{ width: "23rem", padding: 12 }}
-            >
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Photo</th>
-                    <th>Restaurant Name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {getdata.map((item,index) => {
-                    return (
-                      
-                        <tr key={index}>
-                          <td>
-                            <NavLink
-                              to={`/cart/${item.id}`}
-                              onClick={handleFill}
-                            >
-                            
-                            </NavLink>
-                          </td>
-                          <td>
-                            <p>{item.name}</p>
-                            <p>Price : ₹{item.price}</p>
-                            <p>Quantity : {item.qnty}</p>
-                            <p
-                              style={{
-                                color: "red",
-                                fontSize: 20,
-                                cursor: "pointer",
-                              }}
-                              onClick={() => dlt(item.id)}
-                            >
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-  <path fillRule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-</svg>
-                            </p>
-                          </td>
 
-                          <td
-                            className="mt-5"
-                            style={{
-                              color: "red",
-                              fontSize: 20,
-                              cursor: "pointer",
-                            }}
-                            onClick={() => dlt(item.id)}
-                          >
-                            <i className="fas fa-trash largetrash"></i>
-                          </td>
-                        </tr>
-                      
-                    );
-                  })}
-                  <p className="text-center">Total :₹ {price}</p>
-                </tbody>
-              </Table>
-            </div>
-          ) : (
-            <div
-              className="card_details d-flex justify-content-center align-items-center"
-              style={{ width: "24rem", padding: 10, position: "relative" }}
-            >
-              <i
-                className="fas fa-close smallclose"
-                onClick={handleClose}
-                style={{
-                  position: "absolute",
-                  top: 2,
-                  right: 20,
-                  fontSize: 23,
-                  cursor: "pointer",
-                }}
-              ></i>
-              <p style={{ fontSize: 22 }}>Your carts is empty</p>
-              <img
-                src="./cart.gif"
-                alt=""
-                className="emptycart_img"
-                style={{ width: "5rem", padding: 10 }}
-              />
-            </div>
-          )}
-        </Menu>
- */

@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [showsignin, setshowsignin] = useState(false);
-  const [message, setmessage] = useState("");
+  const [showsignin, setShowSignin] = useState(false);
+  const [message, setMessage] = useState("");
   const Toggle = () => {
-    setshowsignin(!showsignin);
+    setShowSignin(!showsignin);
   };
   const navigate = useNavigate();
   const signupFn = () => {
@@ -24,7 +24,7 @@ const Login = () => {
 
     }
     
-    setmessage("User Signed Up Successfully...");
+    setMessage("User Signed Up Successfully...");
   };
   const loginFn = () => {
     let email = document.getElementById("email1").value;
@@ -34,18 +34,18 @@ const Login = () => {
     console.log(mail, email, password, password1);
     if (mail && password) {
       if (email === mail && password === password1) {
-        setmessage("Login successfully");
+        setMessage("Login successfully");
         navigate("/home");
       } else {
-        setmessage("Please fill correct credential");
+        setMessage("Please fill correct credential");
       }
     } else {
-      setmessage("Please create an account");
+      setMessage("Please create an account");
     }
   };
   return (
     <div className="col-md-12  vh-100"
-    style={{ background: "#303F9F" }}>
+    style={{ background: "#3f51b5" }}>
     <h1 className="p-5  justify-content-center align-items-center " style={{ color: "white" }}><svg xmlns="http://www.w3.org/2000/svg" style={{ color: "white" }} width="48" height="48" viewBox="0 0 48 48"><path d="M22 18h-4V4h-4v14h-4V4H6v14c0 4.25 3.32 7.69 7.5 7.95V44h5V25.95c4.18-.26 7.5-3.7 7.5-7.95V4h-4v14zm10-6v16h5v16h5V4c-5.52 0-10 4.48-10 8z"/></svg> Food's Restaurent</h1>
     <div
       className="pt-5 d-flex justify-content-center align-items-center"
@@ -113,7 +113,7 @@ const Login = () => {
                     />
                     <br />
                     <button
-                      style={{ background: "#303F9F" }}
+                      style={{ background: "#3f51b5" }}
                       className="d-flex justify-content-center btn btn-primary w-100 my-1 p-1"
                       onClick={signupFn}
                     >
@@ -157,7 +157,7 @@ const Login = () => {
                     <br />
 
                     <button
-                      style={{ background: "#303F9F" }}
+                      style={{ background: "#3f51b5" }}
                       className="d-flex justify-content-center  btn btn-primary w-100 m-1 p-1"
                       onClick={loginFn}
                     >
